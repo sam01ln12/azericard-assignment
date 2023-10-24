@@ -3,7 +3,7 @@ This assignment involves the development of a microservices-based system, compri
 
 Used technologies : 
 
-spring-cloud-sleuth
+micrometer-tracing
 liquibase
 spring-cloud-eureka
 jwt
