@@ -1,0 +1,10 @@
+version: '3'
+services:
+  postgres:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: assignment_db
+      POSTGRES_USER: assignment_app
+      POSTGRES_PASSWORD: w39irMiSnTaQvuK
+    ports:
+      - "5432:5432"
