@@ -1,0 +1,41 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-product-table
+      author: Samad Mirzayev
+      changes:
+        - createTable:
+            schemaName: public
+            tableName: products
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: product_name
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+                    unique: true
+              - column:
+                  name: stock
+                  type: bigint
+                  constraints:
+                    nullable: false
+              - column:
+                  name: price
+                  type: decimal(12,2)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created_at
+                  type: timestamp
+              - column:
+                  name: updated_at
+                  type: timestamp
+        - createSequence:
+            schemaName: public
+            sequenceName: product_id_seq
+            startValue: 1
+            incrementBy: 1

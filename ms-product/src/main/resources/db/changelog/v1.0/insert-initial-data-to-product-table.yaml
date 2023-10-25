@@ -1,0 +1,509 @@
+databaseChangeLog:
+  - changeSet:
+      id: insert-into-product-table
+      author: Samad Mirzayev
+      changes:
+        - insert:
+            tableName: products
+            columns:
+              - column:
+                    name: id
+                    valueComputed: nextval('product_id_seq')
+              - column:
+                  name: product_name
+                  value: 'High-Performance Laptop'
+              - column:
+                  name: stock
+                  value: 100
+              - column:
+                  name: price
+                  value: 1299.99
+              - column:
+                  name: created_at
+                  value: '2023-10-25 10:00:00'
+              - column:
+                  name: updated_at
+                  value: '2023-10-25 10:00:00'
+        - insert:
+            tableName: products
+            columns:
+              - column:
+                  name: id
+                  valueComputed: nextval('product_id_seq')
+              - column:
+                  name: product_name
+                  value: 'Smartphone - Model Z'
+              - column:
+                  name: stock
+                  value: 75
+              - column:
+                  name: price
+                  value: 899.99
+              - column:
+                  name: created_at
+                  value: '2023-10-25 11:00:00'
+              - column:
+                  name: updated_at
+                  value: '2023-10-25 11:00:00'
+        - insert:
+            tableName: products
+            columns:
+              - column:
+                  name: id
+                  valueComputed: nextval('product_id_seq')
+              - column:
+                  name: product_name
+                  value: '4K Ultra HD TV - 65"'
+              - column:
+                  name: stock
+                  value: 50
+              - column:
+                  name: price
+                  value: 1099.99
+              - column:
+                  name: created_at
+                  value: '2023-10-25 12:00:00'
+              - column:
+                  name: updated_at
+                  value: '2023-10-25 12:00:00'
+        - insert:
+            tableName: products
+            columns:
+              - column:
+                  name: id
+                  valueComputed: nextval('product_id_seq')
+              - column:
+                  name: product_name
+                  value: 'Wireless Over-Ear Headphones'
+              - column:
+                  name: stock
+                  value: 120
+              - column:
+                  name: price
+                  value: 199.99
+              - column:
+                  name: created_at
+                  value: '2023-10-25 13:00:00'
+              - column:
+                  name: updated_at
+                  value: '2023-10-25 13:00:00'
+        - insert:
+            tableName: products
+            columns:
+              - column:
+                  name: id
+                  valueComputed: nextval('product_id_seq')
+              - column:
+                  name: product_name
+                  value: 'Espresso Machine - Silver'
+              - column:
+                  name: stock
+                  value: 40
+              - column:
+                  name: price
+                  value: 349.99
+              - column:
+                  name: created_at
+                  value: '2023-10-25 14:00:00'
+              - column:
+                  name: updated_at
+                  value: '2023-10-25 14:00:00'
+        - insert:
+            tableName: products
+            columns:
+              - column:
+                  name: id
+                  valueComputed: nextval('product_id_seq')
+              - column:
+                  name: product_name
+                  value: 'Gaming Console - NextGen'
+              - column:
+                  name: stock
+                  value: 60
+              - column:
+                  name: price
+                  value: 399.99
+              - column:
+                  name: created_at
+                  value: '2023-10-25 15:00:00'
+              - column:
+                  name: updated_at
+                  value: '2023-10-25 15:00:00'
+        - insert:
+            tableName: products
+            columns:
+              - column:
+                  name: id
+                  valueComputed: nextval('product_id_seq')
+              - column:
+                  name: product_name
+                  value: 'Smart Watch - Health Pro'
+              - column:
+                  name: stock
+                  value: 90
+              - column:
+                  name: price
+                  value: 199.99
+              - column:
+                  name: created_at
+                  value: '2023-10-25 16:00:00'
+              - column:
+                  name: updated_at
+                  value: '2023-10-25 16:00:00'
+        - insert:
+            tableName: products
+            columns:
+              - column:
+                  name: id
+                  valueComputed: nextval('product_id_seq')
+              - column:
+                  name: product_name
+                  value: 'Home Theater System - 7.1'
+              - column:
+                  name: stock
+                  value: 25
+              - column:
+                  name: price
+                  value: 599.99
+              - column:
+                  name: created_at
+                  value: '2023-10-25 17:00:00'
+              - column:
+                  name: updated_at
+                  value: '2023-10-25 17:00:00'
+        - insert:
+            tableName: products
+            columns:
+              - column:
+                  name: id
+                  valueComputed: nextval('product_id_seq')
+              - column:
+                  name: product_name
+                  value: 'Digital Camera - DSLR'
+              - column:
+                  name: stock
+                  value: 35
+              - column:
+                  name: price
+                  value: 899.99
+              - column:
+                  name: created_at
+                  value: '2023-10-25 18:00:00'
+              - column:
+                  name: updated_at
+                  value: '2023-10-25 18:00:00'
+        - insert:
+            tableName: products
+            columns:
+              - column:
+                  name: id
+                  valueComputed: nextval('product_id_seq')
+              - column:
+                  name: product_name
+                  value: 'Wireless Mouse and Keyboard Set'
+              - column:
+                  name: stock
+                  value: 80
+              - column:
+                  name: price
+                  value: 49.99
+              - column:
+                  name: created_at
+                  value: '2023-10-25 19:00:00'
+              - column:
+                  name: updated_at
+                  value: '2023-10-25 19:00:00'
+        - insert:
+            tableName: products
+            columns:
+              - column:
+                  name: id
+                  valueComputed: nextval('product_id_seq')
+              - column:
+                  name: product_name
+                  value: 'Portable Bluetooth Speaker'
+              - column:
+                  name: stock
+                  value: 55
+              - column:
+                  name: price
+                  value: 79.99
+              - column:
+                  name: created_at
+                  value: '2023-10-25 20:00:00'
+              - column:
+                  name: updated_at
+                  value: '2023-10-25 20:00:00'
+        - insert:
+            tableName: products
+            columns:
+              - column:
+                  name: id
+                  valueComputed: nextval('product_id_seq')
+              - column:
+                  name: product_name
+                  value: 'Fitness Tracker - GPS Edition'
+              - column:
+                  name: stock
+                  value: 70
+              - column:
+                  name: price
+                  value: 129.99
+              - column:
+                  name: created_at
+                  value: '2023-10-25 21:00:00'
+              - column:
+                  name: updated_at
+                  value: '2023-10-25 21:00:00'
+        - insert:
+            tableName: products
+            columns:
+              - column:
+                  name: id
+                  valueComputed: nextval('product_id_seq')
+              - column:
+                  name: product_name
+                  value: 'Cordless Vacuum Cleaner - UltraPower'
+              - column:
+                  name: stock
+                  value: 40
+              - column:
+                  name: price
+                  value: 179.99
+              - column:
+                  name: created_at
+                  value: '2023-10-25 22:00:00'
+              - column:
+                  name: updated_at
+                  value: '2023-10-25 22:00:00'
+        - insert:
+            tableName: products
+            columns:
+              - column:
+                  name: id
+                  valueComputed: nextval('product_id_seq')
+              - column:
+                  name: product_name
+                  value: 'Outdoor Gas Grill - Deluxe Model'
+              - column:
+                  name: stock
+                  value: 20
+              - column:
+                  name: price
+                  value: 349.99
+              - column:
+                  name: created_at
+                  value: '2023-10-25 23:00:00'
+              - column:
+                  name: updated_at
+                  value: '2023-10-25 23:00:00'
+        - insert:
+            tableName: products
+            columns:
+              - column:
+                  name: id
+                  valueComputed: nextval('product_id_seq')
+              - column:
+                  name: product_name
+                  value: 'Electric Kettle - Stainless Steel'
+              - column:
+                  name: stock
+                  value: 60
+              - column:
+                  name: price
+                  value: 29.99
+              - column:
+                  name: created_at
+                  value: '2023-10-25 24:00:00'
+              - column:
+                  name: updated_at
+                  value: '2023-10-25 24:00:00'
+        - insert:
+            tableName: products
+            columns:
+              - column:
+                  name: id
+                  valueComputed: nextval('product_id_seq')
+              - column:
+                  name: product_name
+                  value: 'Smart Thermostat - WiFi Enabled'
+              - column:
+                  name: stock
+                  value: 40
+              - column:
+                  name: price
+                  value: 89.99
+              - column:
+                  name: created_at
+                  value: '2023-10-25 01:00:00'
+              - column:
+                  name: updated_at
+                  value: '2023-10-25 01:00:00'
+        - insert:
+            tableName: products
+            columns:
+              - column:
+                  name: id
+                  valueComputed: nextval('product_id_seq')
+              - column:
+                  name: product_name
+                  value: 'Home Office Desk - Solid Wood'
+              - column:
+                  name: stock
+                  value: 30
+              - column:
+                  name: price
+                  value: 249.99
+              - column:
+                  name: created_at
+                  value: '2023-10-25 02:00:00'
+              - column:
+                  name: updated_at
+                  value: '2023-10-25 02:00:00'
+        - insert:
+            tableName: products
+            columns:
+              - column:
+                  name: id
+                  valueComputed: nextval('product_id_seq')
+              - column:
+                  name: product_name
+                  value: 'Stainless Steel Toaster'
+              - column:
+                  name: stock
+                  value: 45
+              - column:
+                  name: price
+                  value: 39.99
+              - column:
+                  name: created_at
+                  value: '2023-10-25 03:00:00'
+              - column:
+                  name: updated_at
+                  value: '2023-10-25 03:00:00'
+        - insert:
+            tableName: products
+            columns:
+              - column:
+                  name: id
+                  valueComputed: nextval('product_id_seq')
+              - column:
+                  name: product_name
+                  value: 'Camping Gear Set - 6 Pieces'
+              - column:
+                  name: stock
+                  value: 15
+              - column:
+                  name: price
+                  value: 199.99
+              - column:
+                  name: created_at
+                  value: '2023-10-25 04:00:00'
+              - column:
+                  name: updated_at
+                  value: '2023-10-25 04:00:00'
+        - insert:
+            tableName: products
+            columns:
+              - column:
+                  name: id
+                  valueComputed: nextval('product_id_seq')
+              - column:
+                  name: product_name
+                  value: 'Dining Table Set - Oak Finish'
+              - column:
+                  name: stock
+                  value: 10
+              - column:
+                  name: price
+                  value: 499.99
+              - column:
+                  name: created_at
+                  value: '2023-10-25 05:00:00'
+              - column:
+                  name: updated_at
+                  value: '2023-10-25 05:00:00'
+        - insert:
+            tableName: products
+            columns:
+              - column:
+                  name: id
+                  valueComputed: nextval('product_id_seq')
+              - column:
+                  name: product_name
+                  value: 'Bluetooth Earbuds - Noise Cancelling'
+              - column:
+                  name: stock
+                  value: 85
+              - column:
+                  name: price
+                  value: 79.99
+              - column:
+                  name: created_at
+                  value: '2023-10-25 06:00:00'
+              - column:
+                  name: updated_at
+                  value: '2023-10-25 06:00:00'
+        - insert:
+            tableName: products
+            columns:
+              - column:
+                  name: id
+                  valueComputed: nextval('product_id_seq')
+              - column:
+                  name: product_name
+                  value: 'Robot Vacuum Cleaner - Smart Home'
+              - column:
+                  name: stock
+                  value: 25
+              - column:
+                  name: price
+                  value: 349.99
+              - column:
+                  name: created_at
+                  value: '2023-10-25 07:00:00'
+              - column:
+                  name: updated_at
+                  value: '2023-10-25 07:00:00'
+        - insert:
+            tableName: products
+            columns:
+              - column:
+                  name: id
+                  valueComputed: nextval('product_id_seq')
+              - column:
+                  name: product_name
+                  value: 'Full HD Computer Monitor - 27"'
+              - column:
+                  name: stock
+                  value: 30
+              - column:
+                  name: price
+                  value: 199.99
+              - column:
+                  name: created_at
+                  value: '2023-10-25 08:00:00'
+              - column:
+                  name: updated_at
+                  value: '2023-10-25 08:00:00'
+        - insert:
+            tableName: products
+            columns:
+              - column:
+                  name: id
+                  valueComputed: nextval('product_id_seq')
+              - column:
+                  name: product_name
+                  value: 'Bedroom Dresser - Solid Pine'
+              - column:
+                  name: stock
+                  value: 20
+              - column:
+                  name: price
+                  value: 299.99
+              - column:
+                  name: created_at
+                  value: '2023-10-25 09:00:00'
+              - column:
+                  name: updated_at
+                  value: '2023-10-25 09:00:00'
