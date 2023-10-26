@@ -1,0 +1,53 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-transactions-table
+      author: Samad Mirzayev
+      changes:
+        - createTable:
+            schemaName: public
+            tableName: transactions
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: username
+                  type: varchar(100)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: masked_pan
+                  type: varchar(20)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: product_name
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: price
+                  type: decimal(12,2)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: state
+                  type: varchar(20)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: decline_reason
+                  type: varchar(255)
+              - column:
+                  name: created_at
+                  type: timestamp
+              - column:
+                  name: updated_at
+                  type: timestamp
+        - createSequence:
+            schemaName: public
+            sequenceName: transaction_id_seq
+            startValue: 1
+            incrementBy: 1

@@ -1,0 +1,17 @@
+server:
+  port: 8480
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/assignment_db
+    username: assignment_app
+    password: w39irMiSnTaQvuK
+  application:
+    name: ms-card
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
+
