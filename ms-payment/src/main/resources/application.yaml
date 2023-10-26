@@ -1,5 +1,12 @@
 server:
   port: 8480
+  ssl:
+    enabled: true
+    #    key-store: classpath:cert/assignment.p12
+    key-store-password: 123456
+    key-alias: eureka-server
+    key-store-type: PKCS12
+    key-store: ../assignment.p12
 
 spring:
   datasource:
@@ -12,6 +19,10 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka
+      defaultZone: https://localhost:8761/eureka
+  instance:
+    prefer-ip-address: true
+    non-secure-port-enabled: false
+    secure-port-enabled: true
 
 
