@@ -1,0 +1,44 @@
+server:
+  port: 8080
+  ssl:
+    enabled: true
+    #    key-store: classpath:cert/assignment.p12
+    key-store-password: 123456
+    key-alias: eureka-server
+    key-store-type: PKCS12
+    key-store: ../assignment.p12
+
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+#      httpclient:
+#        ssl:
+#          use-insecure-trust-manager: true
+      routes:
+        - id: ms-user
+          uri: https://localhost:8180
+          predicates:
+            - Path=/user/**
+        - id: ms-card
+          uri: https://localhost:8380
+          predicates:
+            - Path=/card/**
+        - id: ms-product
+          uri: https://localhost:8280
+          predicates:
+            - Path=/product/**
+        - id: ms-payment
+          uri: https://localhost:8480
+          predicates:
+            - Path=/payment/**
+
+eureka:
+  client:
+    service-url:
+      defaultZone: https://localhost:8761/eureka
+  instance:
+    prefer-ip-address: true
+    non-secure-port-enabled: false
+    secure-port-enabled: true
