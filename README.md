@@ -7,3 +7,6 @@ micrometer-tracing
 liquibase
 spring-cloud-eureka
 jwt
+
+
+swagger-url : https://localhost:8080/webjars/swagger-ui/index.html

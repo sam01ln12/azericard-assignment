@@ -1,4 +1,4 @@
-package com.example.msuser.controller;
+package com.example.mspayment.controller;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -6,12 +6,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/payment")
 @CrossOrigin
-public class UserController {
+public class PaymentController {
 
     @GetMapping("/test")
     public String test() {
+
         return "test";
     }
 }
