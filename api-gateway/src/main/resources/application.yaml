@@ -9,30 +9,34 @@ server:
     key-store: ../assignment.p12
 
 spring:
+  main:
+    web-application-type: reactive
   application:
     name: api-gateway
   cloud:
     gateway:
-#      httpclient:
-#        ssl:
-#          use-insecure-trust-manager: true
+      httpclient:
+        connect-timeout: 10000
+        response-timeout: 7s
       routes:
-        - id: ms-user
+        - id: ms-user-service
           uri: https://localhost:8180
           predicates:
-            - Path=/user/**
-        - id: ms-card
+            - Path=/user/** , /v3/api-docs/ms-user
+        - id: ms-card-service
           uri: https://localhost:8380
           predicates:
-            - Path=/card/**
-        - id: ms-product
+            - Path=/card/**,  /v3/api-docs/ms-card
+        - id: ms-product-service
           uri: https://localhost:8280
           predicates:
-            - Path=/product/**
-        - id: ms-payment
+            - Path=/product/** , /v3/api-docs/ms-product
+        - id: ms-payment-service
           uri: https://localhost:8480
           predicates:
-            - Path=/payment/**
+            - Path=/payment/** , /v3/api-docs/ms-payment
+    discovery:
+      enabled: true
 
 eureka:
   client:
