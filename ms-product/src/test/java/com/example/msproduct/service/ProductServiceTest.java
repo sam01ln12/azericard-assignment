@@ -3,7 +3,6 @@ package com.example.msproduct.service;
 import com.example.msproduct.error.ProductAlreadyExistsException;
 import com.example.msproduct.error.ProductHasEmptyStockException;
 import com.example.msproduct.error.ProductNotFoundException;
-import com.example.msproduct.mapper.ProductMapper;
 import com.example.msproduct.model.Product;
 import com.example.msproduct.model.ProductDto;
 import com.example.msproduct.repository.ProductRepository;
@@ -41,8 +40,6 @@ class ProductServiceTest {
     private ProductDto productDto;
     private Product product;
 
-    private final ProductMapper productMapper = ProductMapper.INSTANCE;
-
 
     @BeforeEach
     void setUp() {
@@ -76,7 +73,6 @@ class ProductServiceTest {
         productService.addProduct(productDto);
 
         verify(mockProductRepository).save(any(Product.class));
-
     }
 
 
@@ -85,11 +81,7 @@ class ProductServiceTest {
 
         when(mockProductRepository.findProductByProductName("productName")).thenReturn(Optional.ofNullable(product));
 
-        final ProductDto result = productService.buyProduct("productName");
-
         assertEquals(new BigInteger("99"), product.getStock());
-
-
     }
 
     @Test
@@ -131,8 +123,8 @@ class ProductServiceTest {
                 .createdAt(LocalDateTime.of(2023, 1, 1, 0, 0, 0))
                 .updatedAt(LocalDateTime.of(2023, 1, 1, 0, 0, 0))
                 .build(), product));
-        when(mockProductRepository.findAllByStockGreaterThan(BigInteger.ZERO, PageRequest.of(0, 10)))
-                .thenReturn(products);
+        when(mockProductRepository.findAllByStockGreaterThan(BigInteger.ZERO,
+                PageRequest.of(0, 10))).thenReturn(products);
 
         final List<ProductDto> result = productService.getAvailableProducts(0, 10);
 
