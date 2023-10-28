@@ -1,18 +1,37 @@
 package com.example.msproduct.controller;
 
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.example.msproduct.model.ProductDto;
+import com.example.msproduct.service.ProductService;
+import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/product")
 @CrossOrigin
+@RequiredArgsConstructor
 public class ProductController {
 
-    @GetMapping("/test")
-    public String test() {
+    private final ProductService productService;
 
-        return "test";
+    @GetMapping
+    public List<ProductDto> getAllAvailableProducts(@RequestParam (defaultValue = "0") int pageNumber,
+                                                    @RequestParam (defaultValue = "20" )int pageSize) {
+
+        return productService.getAvailableProducts(pageNumber, pageSize);
+    }
+
+    @PostMapping("/add")
+    public ProductDto addProduct(@RequestBody @Valid ProductDto productDto) {
+
+        return productService.addProduct(productDto);
+    }
+
+    @PutMapping("/buy/{product-name}")
+    public ProductDto buyProduct(@PathVariable ("product-name") String productName) {
+
+        return productService.buyProduct(productName);
     }
 }

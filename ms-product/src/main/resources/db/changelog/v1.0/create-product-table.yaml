@@ -34,6 +34,9 @@ databaseChangeLog:
               - column:
                   name: updated_at
                   type: timestamp
+              - column:
+                  name: version
+                  type: bigint
         - createSequence:
             schemaName: public
             sequenceName: product_id_seq
