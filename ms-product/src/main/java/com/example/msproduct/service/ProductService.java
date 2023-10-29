@@ -68,7 +68,22 @@ public class ProductService {
 
         Product boughtProduct = productRepository.save(product);
         log.info("Product was bought : {}", product);
+
         return productMapper.toProductDto(boughtProduct);
+    }
+
+    @Transactional
+    @Retryable(retryFor = OptimisticLockException.class)
+    public ProductDto reverseProduct(String productName) {
+
+        Product product = productRepository.findProductByProductName(productName).orElseThrow(
+                () -> new ProductNotFoundException("No product with name " + productName + " was found"));
+
+        log.info("Reverse product : {}", product);
+        product.setStock(product.getStock().add(BigInteger.ONE));
+        product.setUpdatedAt(LocalDateTime.now());
+
+        return productMapper.toProductDto(productRepository.save(product));
     }
 
     @Transactional

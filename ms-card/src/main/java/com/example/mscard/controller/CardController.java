@@ -1,17 +1,39 @@
 package com.example.mscard.controller;
 
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.example.mscard.model.CardDto;
+import com.example.mscard.model.CardRequest;
+import com.example.mscard.model.OperationRequest;
+import com.example.mscard.service.CardService;
+import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/card")
 @CrossOrigin
+@RequiredArgsConstructor
 public class CardController {
 
-    @GetMapping("/test")
-    public String test() {
-        return "test";
+    private final CardService cardService;
+
+    @GetMapping("/cards/{username}")
+    public List<CardDto> getActiveCards(@PathVariable String username,
+                                        @RequestParam (defaultValue = "0") int pageNumber,
+                                        @RequestParam (defaultValue = "20") int pageSize) {
+        return cardService.getActiveCards(username, pageNumber, pageSize);
+    }
+
+    @PostMapping("/add")
+    public CardDto addNewCard(@RequestBody @Valid CardRequest cardRequest) {
+
+        return cardService.addNewCard(cardRequest);
+    }
+
+    @PutMapping("/operation")
+    public CardDto createOperation(@RequestBody @Valid OperationRequest operationRequest) {
+
+        return cardService.createOperation(operationRequest);
     }
 }
