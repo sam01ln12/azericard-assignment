@@ -81,7 +81,17 @@ class ProductServiceTest {
 
         when(mockProductRepository.findProductByProductName("productName")).thenReturn(Optional.ofNullable(product));
 
+        productService.buyProduct("productName");
         assertEquals(new BigInteger("99"), product.getStock());
+    }
+
+    @Test
+    void testReverseProduct() {
+
+        when(mockProductRepository.findProductByProductName("productName")).thenReturn(Optional.ofNullable(product));
+
+        productService.reverseProduct("productName");
+        assertEquals(new BigInteger("101"), product.getStock());
     }
 
     @Test
@@ -90,6 +100,14 @@ class ProductServiceTest {
         when(mockProductRepository.findProductByProductName("productName")).thenReturn(Optional.empty());
 
         assertThrows(ProductNotFoundException.class, () -> productService.buyProduct("productName"));
+    }
+
+    @Test
+    void testReverseProductThrowsProductNotFoundException() {
+
+        when(mockProductRepository.findProductByProductName("productName")).thenReturn(Optional.empty());
+
+        assertThrows(ProductNotFoundException.class, () -> productService.reverseProduct("productName"));
     }
 
     @Test
@@ -110,6 +128,18 @@ class ProductServiceTest {
 
         assertThrows(OptimisticLockingFailureException.class, () ->
                 productService.buyProduct("productName"));
+
+    }
+
+    @Test
+    void testReverseProductThrowsOptimisticLockingFailureException() {
+
+        when(mockProductRepository.findProductByProductName("productName")).thenReturn(Optional.ofNullable(product));
+
+        when(mockProductRepository.save(any(Product.class))).thenThrow(OptimisticLockingFailureException.class);
+
+        assertThrows(OptimisticLockingFailureException.class, () ->
+                productService.reverseProduct("productName"));
 
     }
 

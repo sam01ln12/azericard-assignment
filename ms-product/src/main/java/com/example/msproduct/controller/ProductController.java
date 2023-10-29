@@ -16,7 +16,7 @@ public class ProductController {
 
     private final ProductService productService;
 
-    @GetMapping
+    @GetMapping("/products")
     public List<ProductDto> getAllAvailableProducts(@RequestParam (defaultValue = "0") int pageNumber,
                                                     @RequestParam (defaultValue = "20" )int pageSize) {
 
@@ -33,5 +33,11 @@ public class ProductController {
     public ProductDto buyProduct(@PathVariable ("product-name") String productName) {
 
         return productService.buyProduct(productName);
+    }
+
+    @PutMapping("/reverse/{product-name}")
+    public ProductDto reverseProduct(@PathVariable ("product-name") String productName) {
+
+        return productService.reverseProduct(productName);
     }
 }

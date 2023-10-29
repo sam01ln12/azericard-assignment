@@ -8,11 +8,6 @@ databaseChangeLog:
             tableName: cards
             columns:
               - column:
-                  name: id
-                  type: bigint
-                  constraints:
-                    primaryKey: true
-              - column:
                   name: username
                   type: varchar(100)
                   constraints:
@@ -27,21 +22,30 @@ databaseChangeLog:
                   type: varchar(20)
                   constraints:
                     nullable: false
+                    primaryKey: true
+                    primaryKeyName: PK_CARDS
               - column:
                   name: expiration_date
                   type: date
                   constraints:
                     nullable: false
+                    primaryKey: true
+                    primaryKeyName: PK_CARDS
               - column:
                   name: cvv
-                  type: varchar(20)
+                  type: varchar(255)
                   constraints:
                     nullable: false
+                    primaryKey: true
+                    primaryKeyName: PK_CARDS
               - column:
                   name: balance
                   type: decimal(12,2)
                   constraints:
                     nullable: false
+              - column:
+                  name: version
+                  type: bigint
               - column:
                   name: created_at
                   type: timestamp

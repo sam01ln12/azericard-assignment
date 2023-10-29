@@ -18,11 +18,11 @@ public class ProductDto {
     @NotBlank(message = "Product name cannot be empty or blank")
     private String productName;
 
-    @Min(value = 1, message = "Value must be positive")
+    @Min(value = 1, message = "Stock must be positive")
     @NotNull(message = "Stock cannot be null")
     private BigInteger stock;
 
-    @DecimalMin(value = "0.01", message = "Value must be positive")
+    @DecimalMin(value = "0.01", message = "Price must be positive")
     @NotNull(message = "Price cannot be null")
     private BigDecimal price;
 }
