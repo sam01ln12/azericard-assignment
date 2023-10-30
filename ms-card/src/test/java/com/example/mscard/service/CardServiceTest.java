@@ -106,7 +106,7 @@ class CardServiceTest {
     @Test
     void testCreateOperationPurchase() {
 
-        when(mockCardRepository.findByMaskedPanAndCvvAndExpirationDateAndUsername("123456******3456", cvv,
+        when(mockCardRepository.findByMaskedPanAndCvvAndExpirationDateAndUsername("123456******3456", "111",
                 LocalDate.of(2024, 12, 1), "username")).thenReturn(Optional.ofNullable(card));
 
         cardService.createOperation(operationRequest);
@@ -118,7 +118,7 @@ class CardServiceTest {
 
         card.setExpirationDate(LocalDate.of(2022, 12, 1));
         operationRequest.setExpirationDate("11/22");
-        when(mockCardRepository.findByMaskedPanAndCvvAndExpirationDateAndUsername("123456******3456", cvv,
+        when(mockCardRepository.findByMaskedPanAndCvvAndExpirationDateAndUsername("123456******3456", "111",
                 LocalDate.of(2022, 12, 1), "username")).thenReturn(Optional.ofNullable(card));
 
         assertThrows(ExpiredCardException.class, () -> cardService.createOperation(operationRequest));
@@ -128,7 +128,7 @@ class CardServiceTest {
     void testCreateOperationPurchaseInsufficientBalance() {
 
         operationRequest.setPrice(new BigDecimal(100));
-        when(mockCardRepository.findByMaskedPanAndCvvAndExpirationDateAndUsername("123456******3456", cvv,
+        when(mockCardRepository.findByMaskedPanAndCvvAndExpirationDateAndUsername("123456******3456", "111",
                 LocalDate.of(2024, 12, 1), "username")).thenReturn(Optional.ofNullable(card));
 
         assertThrows(CardInsufficientBalanceException.class, () ->cardService.createOperation(operationRequest));
@@ -139,7 +139,7 @@ class CardServiceTest {
 
         operationRequest.setOperationType(OperationType.REVERSE);
 
-        when(mockCardRepository.findByMaskedPanAndCvvAndExpirationDateAndUsername("123456******3456", cvv,
+        when(mockCardRepository.findByMaskedPanAndCvvAndExpirationDateAndUsername("123456******3456", "111",
                 LocalDate.of(2024, 12, 1), "username")).thenReturn(Optional.ofNullable(card));
 
         cardService.createOperation(operationRequest);
@@ -149,7 +149,7 @@ class CardServiceTest {
     @Test
     void testCreateOperationThrowsCardNotFoundException() {
 
-        when(mockCardRepository.findByMaskedPanAndCvvAndExpirationDateAndUsername("123456******3456", cvv,
+        when(mockCardRepository.findByMaskedPanAndCvvAndExpirationDateAndUsername("123456******3456", "111",
                 LocalDate.of(2024, 12, 1), "username")).thenReturn(Optional.empty());
 
         assertThrows(CardNotFoundException.class, () -> cardService.createOperation(operationRequest));
@@ -159,7 +159,7 @@ class CardServiceTest {
     @Test
     void testCreateOperationThrowsOptimisticLockingFailureException() {
 
-        when(mockCardRepository.findByMaskedPanAndCvvAndExpirationDateAndUsername("123456******3456", cvv,
+        when(mockCardRepository.findByMaskedPanAndCvvAndExpirationDateAndUsername("123456******3456", "111",
                 LocalDate.of(2024, 12, 1), "username")).thenReturn(Optional.ofNullable(card));
 
         when(mockCardRepository.save(any(Card.class))).thenThrow(OptimisticLockingFailureException.class);

@@ -78,10 +78,10 @@ public class CardService {
 
         LocalDate expirationDate = getExpirationDate(operationRequest.getExpirationDate());
 
-        String cvv = Hashing.sha256().hashString(operationRequest.getCvv(), StandardCharsets.UTF_8).toString();
         Card card = cardRepository.findByMaskedPanAndCvvAndExpirationDateAndUsername(operationRequest.getMaskedPan(),
-                cvv, expirationDate, operationRequest.getUsername()).orElseThrow(() -> new CardNotFoundException(
-                "No card was found for masked pan " + operationRequest.getMaskedPan()));
+                operationRequest.getCvv(), expirationDate, operationRequest.getUsername())
+                .orElseThrow(() -> new CardNotFoundException("No card was found for masked pan "
+                        + operationRequest.getMaskedPan()));
 
         if (card.getExpirationDate().isEqual(LocalDate.now()) || card.getExpirationDate().isBefore(LocalDate.now())) {
             throw new ExpiredCardException("Card " + operationRequest.getMaskedPan() + " / "

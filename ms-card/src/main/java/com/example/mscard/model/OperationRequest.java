@@ -26,7 +26,6 @@ public class OperationRequest {
     @NotNull(message = "Expiration date cannot be null")
     private String expirationDate;
 
-    @Pattern(regexp = "\\d{3}", message = "CVV length must be 3 and contain only digits")
     @NotNull(message = "CVV cannot be null")
     private String cvv;
 
