@@ -8,3 +8,82 @@ services:
       POSTGRES_PASSWORD: w39irMiSnTaQvuK
     ports:
       - "5432:5432"
+    networks:
+      - my-network
+
+  ms-card:
+    image: azericard-assignment-ms-card:latest
+    depends_on:
+      - postgres
+      - api-gateway
+    build:
+      context: ./ms-card
+    ports:
+      - "8380:8380"
+    networks:
+      - my-network
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/assignment_db
+      SPRING_DATASOURCE_USERNAME: assignment_app
+      SPRING_DATASOURCE_PASSWORD: w39irMiSnTaQvuK
+
+  ms-product:
+    image: azericard-assignment-ms-product:latest
+    depends_on:
+      - postgres
+      - api-gateway
+    build:
+      context: ./ms-product
+    ports:
+      - "8280:8280"
+    networks:
+      - my-network
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/assignment_db
+      SPRING_DATASOURCE_USERNAME: assignment_app
+      SPRING_DATASOURCE_PASSWORD: w39irMiSnTaQvuK
+
+  ms-user:
+    image: azericard-assignment-ms-user:latest
+    depends_on:
+#      - eureka-server
+      - postgres
+      - api-gateway
+    build:
+      context: ./ms-user
+    ports:
+      - "8180:8180"
+    networks:
+      - my-network
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/assignment_db
+      SPRING_DATASOURCE_USERNAME: assignment_app
+      SPRING_DATASOURCE_PASSWORD: w39irMiSnTaQvuK
+
+  ms-payment:
+    image: azericard-assignment-ms-payment:latest
+    depends_on:
+      - postgres
+      - api-gateway
+    build:
+      context: ./ms-payment
+    ports:
+      - "8480:8480"
+    networks:
+      - my-network
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/assignment_db
+      SPRING_DATASOURCE_USERNAME: assignment_app
+      SPRING_DATASOURCE_PASSWORD: w39irMiSnTaQvuK
+
+  api-gateway:
+    image: azericard-assignment-api-gateway:latest
+    build:
+      context: ./api-gateway
+    ports:
+      - "8080:8080"
+    networks:
+      - my-network
+
+networks:
+  my-network:

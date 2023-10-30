@@ -33,7 +33,6 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.liquibase:liquibase-core'
     implementation 'io.micrometer:micrometer-tracing:latest.integration'
-    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
     implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
     implementation 'io.github.openfeign:feign-jackson:12.3'
     implementation 'io.github.openfeign:feign-annotation-error-decoder'
@@ -59,4 +58,9 @@ dependencyManagement {
 
 tasks.named('test') {
     useJUnitPlatform()
+}
+
+
+jar {
+    enabled = false
 }

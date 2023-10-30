@@ -5,7 +5,64 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6b4e4fe4-be51-4ee8-900d-0d2d1275f066" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/ms-discovery/src/main/java/com/example/msdiscovery/MsDiscoveryApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-discovery/src/main/java/com/example/msdiscovery/MsDiscoveryApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-gateway/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assignment.csr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assignment.jks" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assignment.key" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-card/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-card/cert/assignment.p12" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-card/src/main/resources/cert/assignment.p12" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-discovery/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-payment/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-payment/cert/assignment.p12" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-payment/src/main/java/com/example/mspayment/config/LoggingAspect.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-payment/src/main/java/com/example/mspayment/config/client/CardClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-payment/src/main/java/com/example/mspayment/error/CommonException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-payment/src/main/java/com/example/mspayment/error/ErrorCodes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-payment/src/main/java/com/example/mspayment/error/ErrorResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-payment/src/main/java/com/example/mspayment/error/PaymentErrorHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-payment/src/main/java/com/example/mspayment/model/CardDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-payment/src/main/java/com/example/mspayment/model/OperationRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-payment/src/main/java/com/example/mspayment/model/OperationType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-payment/src/main/java/com/example/mspayment/model/ProductDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-payment/src/main/java/com/example/mspayment/model/Transaction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-payment/src/main/java/com/example/mspayment/model/TransactionState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-payment/src/main/java/com/example/mspayment/service/TransactionService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-payment/src/main/resources/cert/assignment.p12" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-payment/src/main/resources/log4j2-spring.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-product/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-user/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-user/cert/assignment.p12" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-user/src/main/resources/cert/assignment.p12" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/azericard-assignment.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/cert/assignment.crt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment.p12" beforeDir="false" afterPath="$PROJECT_DIR$/assignment.p12" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-card/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/ms-card/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-card/cert/assignment.crt" beforeDir="false" afterPath="$PROJECT_DIR$/ms-card/cert/assignment.crt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-card/src/main/java/com/example/mscard/model/OperationRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-card/src/main/java/com/example/mscard/model/OperationRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-card/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/ms-card/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-discovery/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/ms-discovery/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-discovery/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/ms-discovery/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-payment/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/ms-payment/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-payment/cert/assignment.crt" beforeDir="false" afterPath="$PROJECT_DIR$/ms-payment/cert/assignment.crt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-payment/src/main/java/com/example/mspayment/MsPaymentApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-payment/src/main/java/com/example/mspayment/MsPaymentApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-payment/src/main/java/com/example/mspayment/controller/PaymentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-payment/src/main/java/com/example/mspayment/controller/PaymentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-payment/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/ms-payment/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-payment/src/main/resources/db/changelog/v1.0/create-transactions-table.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/ms-payment/src/main/resources/db/changelog/v1.0/create-transactions-table.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-payment/src/test/java/com/example/mspayment/MsPaymentApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-product/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/ms-product/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-product/cert/assignment.crt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-product/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/ms-product/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-user/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/ms-user/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-user/cert/assignment.crt" beforeDir="false" afterPath="$PROJECT_DIR$/ms-user/cert/assignment.crt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-user/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/ms-user/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-user/src/test/java/com/example/msuser/MsUserApplicationTests.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,27 +75,51 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 7
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="2XIv6DAtEwfu8JPCvp9rsQpMlRT" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/mirzayevsa/Desktop/assignment/azericard-assignment",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/mirzayevsa/Desktop/assignment/azericard-assignment/ms-user/cert&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/ms-user/cert" />
+      <recent name="$PROJECT_DIR$/ms-product/cert" />
+      <recent name="$PROJECT_DIR$/ms-payment/cert" />
+      <recent name="$PROJECT_DIR$/ms-card/cert" />
+      <recent name="$PROJECT_DIR$/api-gateway/cert" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="azericard-assignment" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="azericard-assignment" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -48,6 +129,8 @@
       <option name="presentableId" value="Default" />
       <updated>1698329230603</updated>
       <workItem from="1698329231783" duration="1437000" />
+      <workItem from="1698636726762" duration="13117000" />
+      <workItem from="1698658706175" duration="5092000" />
     </task>
     <servers />
   </component>
