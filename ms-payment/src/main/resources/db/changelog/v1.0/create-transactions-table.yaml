@@ -20,8 +20,6 @@ databaseChangeLog:
               - column:
                   name: masked_pan
                   type: varchar(20)
-                  constraints:
-                    nullable: false
               - column:
                   name: product_name
                   type: varchar(255)

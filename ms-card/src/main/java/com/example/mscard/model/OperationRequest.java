@@ -35,5 +35,5 @@ public class OperationRequest {
     private BigDecimal price;
 
     @NotNull(message = "Operation Type cannot be null")
-    OperationType operationType;
+    private OperationType operationType;
 }

@@ -5,8 +5,11 @@ Used technologies :
 
 micrometer-tracing
 liquibase
-spring-cloud-eureka
 jwt
 
+Composite for cards table, where masked pan, cvv and expiration date used as primary key. This desicion was made to prevent adding same card more than once
 
-swagger-url : https://localhost:8080/webjars/swagger-ui/index.html
+
+swagger-url : http://localhost:8080/webjars/swagger-ui/index.html
+
+Command to run microservices : docker-compose up --build
