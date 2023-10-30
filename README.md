@@ -7,7 +7,7 @@ micrometer-tracing
 liquibase
 jwt
 
-Composite for cards table, where masked pan, cvv and expiration date used as primary key. This desicion was made to prevent adding same card more than once
+Composite key for cards table, where masked pan, cvv and expiration date used as primary key. This desicion was made to prevent adding same card more than once
 
 
 swagger-url : http://localhost:8080/webjars/swagger-ui/index.html
