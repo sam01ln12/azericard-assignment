@@ -35,6 +35,9 @@ public class Transaction {
     @Enumerated(EnumType.STRING)
     private TransactionState state;
 
+    private String expirationDate;
+    private String cvv;
+
     private String declineReason;
 
     private LocalDate createdAt;

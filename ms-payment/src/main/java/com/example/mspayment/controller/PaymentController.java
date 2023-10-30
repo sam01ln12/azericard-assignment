@@ -1,7 +1,14 @@
 package com.example.mspayment.controller;
 
-import com.example.mspayment.model.CardDto;
+import com.example.mspayment.model.PurchaseRequest;
+import com.example.mspayment.model.TransactionDto;
+import com.example.mspayment.model.TransactionRequest;
 import com.example.mspayment.service.TransactionService;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.enums.ParameterIn;
+import io.swagger.v3.oas.annotations.media.Schema;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotEmpty;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,9 +22,24 @@ public class PaymentController {
 
     private final TransactionService transactionService;
 
-    @GetMapping("/test/{username}")
-    public List<CardDto> test(@PathVariable String username) {
+    @PostMapping("/purchase")
+    public TransactionDto buyProduct(@RequestHeader ("X-Operation-Data") @NotEmpty String operationData,
+             @Parameter(name = "X-Operation-Data", in = ParameterIn.HEADER,
+                     schema = @Schema(type = "string")) String operationDataHeader,
+            @RequestBody @Valid PurchaseRequest purchaseRequest) {
 
-        return transactionService.getActiveCardsByUsername(username);
+        return transactionService.purchaseProduct(purchaseRequest, operationData);
+    }
+
+    @PostMapping("/reverse/{transaction-id}")
+    public TransactionDto reverseProduct(@PathVariable ("transaction-id") Long transactionId) {
+
+        return transactionService.reverseProduct(transactionId);
+    }
+
+    @GetMapping("/transactions")
+    public List<TransactionDto> getTransactions(@RequestBody @Valid TransactionRequest transactionRequest) {
+
+        return transactionService.getAllTransactionByStates(transactionRequest);
     }
 }

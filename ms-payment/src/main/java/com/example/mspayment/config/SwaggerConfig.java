@@ -19,7 +19,7 @@ public class SwaggerConfig {
     }
 
     @Bean
-    public OpenAPI springShopOpenAPI() {
+    public OpenAPI springOpenAPI() {
         return new OpenAPI()
                 .info(new Info().title("Payment API")
                         .description("MS-PAYMENT API")

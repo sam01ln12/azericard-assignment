@@ -21,6 +21,12 @@ databaseChangeLog:
                   name: masked_pan
                   type: varchar(20)
               - column:
+                  name: expiration_date
+                  type: varchar(20)
+              - column:
+                  name: cvv
+                  type: varchar(255)
+              - column:
                   name: product_name
                   type: varchar(255)
                   constraints:

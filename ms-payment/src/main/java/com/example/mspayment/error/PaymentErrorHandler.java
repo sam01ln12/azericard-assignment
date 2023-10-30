@@ -16,6 +16,27 @@ import java.util.UUID;
 @Slf4j
 public class PaymentErrorHandler {
 
+    @ExceptionHandler(value = TransactionNotFoundException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public ErrorResponse handleTransactionNotFoundException(TransactionNotFoundException ex) {
+
+        log.error("Transaction not found, reference: {}, code: {}, message: {}",
+                ex.getErrorUUID(), ex.getErrorCode(), ex.getErrorMessage());
+
+        return new ErrorResponse(ErrorCodes.TRANSACTION_NOT_FOUND.name(), ex.getErrorMessage());
+    }
+
+    @ExceptionHandler(value = IncorrectPaymentDataException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public ErrorResponse handleIncorrectPaymentDataException(IncorrectPaymentDataException ex) {
+
+        log.error("Invalid payment data, reference: {}, code: {}, message: {}",
+                ex.getErrorUUID(), ex.getErrorCode(), ex.getErrorMessage());
+
+        return new ErrorResponse(ErrorCodes.INVALID_PAYMENT_DATA.name(), ex.getErrorMessage());
+    }
+
+
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     @ExceptionHandler(CommonException.class)
     public ErrorResponse handleCommonException(CommonException ex) {
