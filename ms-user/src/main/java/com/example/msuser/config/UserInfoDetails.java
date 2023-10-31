@@ -5,6 +5,7 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
@@ -14,14 +15,16 @@ public class UserInfoDetails implements UserDetails {
 
     private final String name;
     private final String password;
-    private final List<GrantedAuthority> authorities;
+    private List<GrantedAuthority> authorities = new ArrayList<>();
 
     public UserInfoDetails(UserEntity userInfo) {
         name = userInfo.getUsername();
         password = userInfo.getPassword();
-        authorities = Arrays.stream(userInfo.getRoles().split(","))
-                .map(SimpleGrantedAuthority::new)
-                .collect(Collectors.toList());
+        if (userInfo.getRoles() != null) {
+            authorities = Arrays.stream(userInfo.getRoles().split(","))
+                    .map(SimpleGrantedAuthority::new)
+                    .collect(Collectors.toList());
+        }
     }
 
     @Override
