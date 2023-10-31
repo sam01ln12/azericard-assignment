@@ -23,12 +23,12 @@ public class PaymentController {
     private final TransactionService transactionService;
 
     @PostMapping("/purchase")
-    public TransactionDto buyProduct(@RequestHeader ("X-Operation-Data") @NotEmpty String operationData,
-             @Parameter(name = "X-Operation-Data", in = ParameterIn.HEADER,
-                     schema = @Schema(type = "string")) String operationDataHeader,
+    public TransactionDto buyProduct(@RequestHeader ("X-Payment-Data") @NotEmpty String paymentData,
+             @Parameter(name = "X-Payment-Data", in = ParameterIn.HEADER,
+                     schema = @Schema(type = "string")) String paymentDataHeader,
             @RequestBody @Valid PurchaseRequest purchaseRequest) {
 
-        return transactionService.purchaseProduct(purchaseRequest, operationData);
+        return transactionService.purchaseProduct(purchaseRequest, paymentData);
     }
 
     @PostMapping("/reverse/{transaction-id}")

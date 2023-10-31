@@ -1,4 +1,4 @@
-package com.example.mspayment.error;
+package com.example.msuser.error;
 
 public enum ErrorCodes {
 
@@ -11,5 +11,8 @@ public enum ErrorCodes {
     EXPIRED_CARD,
     PRODUCT_NOT_FOUND,
     PRODUCT_EXISTS,
-    PRODUCT_HAS_EMPTY_STOCK
+    PRODUCT_HAS_EMPTY_STOCK,
+
+    USER_ALREADY_EXISTS,
+    USER_NOT_FOUND
 }
